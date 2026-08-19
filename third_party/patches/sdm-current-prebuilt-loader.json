@@ -1,0 +1,8 @@
+{
+  "base_revision": "183e7df809131b80ad4393741029d0f20fc3640b",
+  "patch": "sdm-current-prebuilt-loader.patch",
+  "patch_sha256": "15751efa855485d3c2eabbaa8b0c686f94d11ee03d64366dc8d2cd6e7d36f574",
+  "purpose": "Add an optional explicit loader for precompiled upstream SDM CUDA extensions without changing SDM model or kernel behavior.",
+  "repository": "https://github.com/facebookresearch/sparse-delta-memory.git",
+  "schema_version": 1
+}

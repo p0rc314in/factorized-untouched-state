@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "campaign": "factorized-sdm-init-canonical-wt103-seed0-v6",
+  "kind": "exact_training_sources_from_recorded_launch_payload",
+  "source_payload_sha256": "3cb3a8f3ce0b3fbbd7a00f06f52571922982d147a3f810249162beb5a39a0f12",
+  "files": {
+    "benchmarks/model.py": "450930fa1069b74e9fe7cbff0aa96700c16c3798c0a9028ad5c62afd5a790ef4",
+    "benchmarks/recovery.py": "2d57abb5e3b777b4b40e7ef7d57c67b8ec8254192df826cfe20f036e6cd4ce46",
+    "benchmarks/train_canonical_wikitext_cuda.py": "4fd0c9a40f463ae4ad9d2a21dcb1e8ad366bfb8b6fd147b072648c00eb0bfecd",
+    "benchmarks/wikitext103_coverage.py": "32d204f4f4ad64b9cd1c35a1b1e84680effb515269fa830be0093eca6416692b",
+    "factorized_untouched_state/__init__.py": "c7dacddb6d26ea6151367105eb6dd359d11245aac4a4fc261105b74921a7428a",
+    "factorized_untouched_state/prior.py": "f08718d087785ed17e329eef6c96f3c5269d389cd086c3b035f51858e06420a6"
+  }
+}

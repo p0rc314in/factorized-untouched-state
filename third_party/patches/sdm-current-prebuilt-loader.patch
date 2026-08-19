@@ -1,0 +1,113 @@
+diff --git a/lingua/sparse_delta_memory/cuda/_prebuilt.py b/lingua/sparse_delta_memory/cuda/_prebuilt.py
+new file mode 100644
+index 0000000..20e82eb
+--- /dev/null
++++ b/lingua/sparse_delta_memory/cuda/_prebuilt.py
+@@ -0,0 +1,33 @@
++"""Optional loader for checksum-packaged SDM CUDA extensions."""
++
++from __future__ import annotations
++
++import importlib.util
++import os
++from pathlib import Path
++
++
++def load_prebuilt(name: str):
++    """Load one explicitly configured extension, or request upstream JIT."""
++
++    configured = os.environ.get("SDM2_CUDA_EXTENSION_DIR")
++    if configured is None:
++        return None
++    root = Path(configured).resolve()
++    directory = root / name
++    if not directory.is_dir():
++        raise ImportError(f"missing prebuilt SDM extension directory: {directory}")
++    candidates = sorted(directory.glob("*.so"))
++    if len(candidates) != 1:
++        raise ImportError(
++            f"expected one prebuilt SDM extension for {name}, found {candidates}"
++        )
++    path = candidates[0].resolve()
++    if root not in path.parents:
++        raise ImportError(f"prebuilt SDM extension escapes configured root: {path}")
++    specification = importlib.util.spec_from_file_location(name, path)
++    if specification is None or specification.loader is None:
++        raise ImportError(f"cannot load prebuilt SDM extension: {path}")
++    module = importlib.util.module_from_spec(specification)
++    specification.loader.exec_module(module)
++    return module
+diff --git a/lingua/sparse_delta_memory/cuda/sparse_ip_cuda.py b/lingua/sparse_delta_memory/cuda/sparse_ip_cuda.py
+index 43e1093..aa58821 100644
+--- a/lingua/sparse_delta_memory/cuda/sparse_ip_cuda.py
++++ b/lingua/sparse_delta_memory/cuda/sparse_ip_cuda.py
+@@ -10,6 +10,8 @@ Supports int32 and int64 indices (int32 preferred — 15% faster due to halved i
+ import torch
+ from torch.utils.cpp_extension import load_inline
+ 
++from ._prebuilt import load_prebuilt
++
+ _CUDA_SOURCE = r"""
+ #include <torch/extension.h>
+ #include <cuda_runtime.h>
+@@ -517,14 +519,16 @@ _sparse_ip_cuda = None
+ def _get_cuda_module():
+     global _sparse_ip_cuda
+     if _sparse_ip_cuda is None:
+-        _sparse_ip_cuda = load_inline(
+-            name="sparse_ip_sorted",
+-            cpp_sources=[_CPP_SOURCE],
+-            cuda_sources=[_CUDA_SOURCE],
+-            functions=["sparse_ip_gated_fwd_sorted", "sparse_ip_gated_bwd_sorted",
+-                        "fused_gather_decay_scatter"],
+-            verbose=False,
+-        )
++        _sparse_ip_cuda = load_prebuilt("sparse_ip_sorted")
++        if _sparse_ip_cuda is None:
++            _sparse_ip_cuda = load_inline(
++                name="sparse_ip_sorted",
++                cpp_sources=[_CPP_SOURCE],
++                cuda_sources=[_CUDA_SOURCE],
++                functions=["sparse_ip_gated_fwd_sorted", "sparse_ip_gated_bwd_sorted",
++                            "fused_gather_decay_scatter"],
++                verbose=False,
++            )
+     return _sparse_ip_cuda
+ 
+ 
+diff --git a/lingua/sparse_delta_memory/cuda/warp_cooperative_gather_cuda.py b/lingua/sparse_delta_memory/cuda/warp_cooperative_gather_cuda.py
+index 733d14a..c0c1c5a 100644
+--- a/lingua/sparse_delta_memory/cuda/warp_cooperative_gather_cuda.py
++++ b/lingua/sparse_delta_memory/cuda/warp_cooperative_gather_cuda.py
+@@ -16,6 +16,8 @@ Compiled via torch.utils.cpp_extension.load_inline (same pattern as sparse_ip_cu
+ import torch
+ from torch.utils.cpp_extension import load_inline
+ 
++from ._prebuilt import load_prebuilt
++
+ _CUDA_SOURCE = r"""
+ #include <torch/extension.h>
+ #include <cuda_runtime.h>
+@@ -546,13 +548,15 @@ _warp_gather_cuda = None
+ def _get_cuda_module():
+     global _warp_gather_cuda
+     if _warp_gather_cuda is None:
+-        _warp_gather_cuda = load_inline(
+-            name="warp_cooperative_gather",
+-            cpp_sources=[_CPP_SOURCE],
+-            cuda_sources=[_CUDA_SOURCE],
+-            functions=["warp_cooperative_gather", "warp_cooperative_gather_f32out"],
+-            verbose=False,
+-        )
++        _warp_gather_cuda = load_prebuilt("warp_cooperative_gather")
++        if _warp_gather_cuda is None:
++            _warp_gather_cuda = load_inline(
++                name="warp_cooperative_gather",
++                cpp_sources=[_CPP_SOURCE],
++                cuda_sources=[_CUDA_SOURCE],
++                functions=["warp_cooperative_gather", "warp_cooperative_gather_f32out"],
++                verbose=False,
++            )
+     return _warp_gather_cuda
+ 
+ 

@@ -1,0 +1,525 @@
+{
+  "arm": "zero",
+  "budget": {
+    "budget_passes": 3,
+    "budget_selected_before_model_results": true,
+    "pass_validation_nll": {
+      "1": 4.918082223151463,
+      "2": 4.640138367135368,
+      "3": 4.548646389403136
+    },
+    "schedule_action": "retain_fixed_predeclared_budget",
+    "schema_version": 1,
+    "status": "fixed_predeclared_budget_complete",
+    "test_evaluation_allowed": true,
+    "validation_checkpoints_are_reporting_only": true
+  },
+  "campaign": "factorized-sdm-init-canonical-wt103-seed0-v6",
+  "campaign_design_sha256": "cd67e9964c830a2583688b8eb331a89724c2b31cccd18cdf0a12a0804b18c0d5",
+  "config": {
+    "activation_dtype": "bfloat16",
+    "adam_beta1": 0.9,
+    "adam_beta2": 0.95,
+    "arm": "zero",
+    "attention_heads": 4,
+    "batch_size": 8,
+    "campaign": "factorized-sdm-init-canonical-wt103-seed0-v6",
+    "campaign_design_sha256": "cd67e9964c830a2583688b8eb331a89724c2b31cccd18cdf0a12a0804b18c0d5",
+    "evaluation_stride": 512,
+    "gradient_clip": 1.0,
+    "initialization_device": "cuda",
+    "layout": "BBBBBBBA",
+    "memory_heads": 1,
+    "micro_batch_size": 1,
+    "minimum_lr_ratio": 0.1,
+    "mlp_expansion": 4.0,
+    "optimizer_state_dtype": "float32",
+    "passes": 3,
+    "peak_learning_rate": 0.0003,
+    "prior_initialization": "none",
+    "protocol_id": "wikitext103-gpt2-causal-t2048-coverage-v1",
+    "reads": 16,
+    "schedule_steps": 21603,
+    "seed": 0,
+    "sequence_length": 2048,
+    "slots": 1024,
+    "stream_seed": 20260818,
+    "total_steps": 21603,
+    "variant_id": "sdm_zero",
+    "vocab_size": 50257,
+    "warmup_steps": 540,
+    "weight_decay": 0.01,
+    "width": 128,
+    "writes": 16
+  },
+  "coverage": {
+    "all_passes_exactly_once_without_replacement": true,
+    "complete": true,
+    "consumed_optimizer_steps": 21603,
+    "consumed_target_presentations": 353941347,
+    "manifest_sha256": "fc4ef13cbc38070f2d7774dffbfd5be48cab31fe45d6d9995d522fc3bac1dde6",
+    "optimizer_steps_per_pass": 7201,
+    "passes": [
+      {
+        "distinct_record_ids": 57608,
+        "pass_index": 0,
+        "records": 57608,
+        "scored_targets": 117980449
+      },
+      {
+        "distinct_record_ids": 57608,
+        "pass_index": 1,
+        "records": 57608,
+        "scored_targets": 117980449
+      },
+      {
+        "distinct_record_ids": 57608,
+        "pass_index": 2,
+        "records": 57608,
+        "scored_targets": 117980449
+      }
+    ],
+    "payload_sha256": "f430ce52a43a44b88f5a8ec1ec5882866daaa568595bfbd6b765e3369586f85e",
+    "protocol_id": "wikitext103-gpt2-causal-t2048-coverage-v1",
+    "records_per_pass": 57608,
+    "replacement_sampling": false,
+    "schema_version": 1,
+    "scored_targets_per_pass": 117980449,
+    "stream_seed": 20260818,
+    "total_optimizer_steps": 21603,
+    "total_target_presentations": 353941347
+  },
+  "data_payload_sha256": "f430ce52a43a44b88f5a8ec1ec5882866daaa568595bfbd6b765e3369586f85e",
+  "environment": {
+    "cuda": "12.8",
+    "flash_linear_attention": "0.5.2",
+    "gpu": "NVIDIA RTX A6000",
+    "python": "3.12.3",
+    "sdm_loader_patch_sha256": "15751efa855485d3c2eabbaa8b0c686f94d11ee03d64366dc8d2cd6e7d36f574",
+    "sdm_model_and_kernel_mechanics_changed": false,
+    "sdm_source_revision": "183e7df809131b80ad4393741029d0f20fc3640b",
+    "torch": "2.11.0+cu128",
+    "triton": "3.6.0"
+  },
+  "evaluation_seconds": 81.77810298022814,
+  "half_pass_validation": {
+    "bits_per_utf8_byte": 1.6496182608992214,
+    "context_length": 2048,
+    "correct_targets": 59287,
+    "next_token_accuracy": 0.23962476153522813,
+    "nll": 5.294118626579403,
+    "perplexity": 199.16201248321545,
+    "protocol_id": "wikitext103-gpt2-causal-t2048-coverage-v1",
+    "scored_bytes": 1145546,
+    "scored_targets": 247416,
+    "scored_targets_per_second": 14709.132924762336,
+    "seconds": 16.82056999998167,
+    "split": "validation",
+    "stride": 512,
+    "total_nll": 1309849.6541137695,
+    "windows": 484
+  },
+  "manifest_sha256": "fc4ef13cbc38070f2d7774dffbfd5be48cab31fe45d6d9995d522fc3bac1dde6",
+  "metrics": [
+    {
+      "checkpoint_kind": "half_pass",
+      "elapsed_seconds": 2480.876515685115,
+      "gradient_norm": 0.835762619972229,
+      "learning_rate": 0.00028617284616357075,
+      "pass": 0.5000694348007221,
+      "step": 3601,
+      "target_presentations": 58998049,
+      "train_nll": 5.3946380615234375,
+      "validation": {
+        "bits_per_utf8_byte": 1.6496182608992214,
+        "context_length": 2048,
+        "correct_targets": 59287,
+        "next_token_accuracy": 0.23962476153522813,
+        "nll": 5.294118626579403,
+        "perplexity": 199.16201248321545,
+        "protocol_id": "wikitext103-gpt2-causal-t2048-coverage-v1",
+        "scored_bytes": 1145546,
+        "scored_targets": 247416,
+        "scored_targets_per_second": 14709.132924762336,
+        "seconds": 16.82056999998167,
+        "split": "validation",
+        "stride": 512,
+        "total_nll": 1309849.6541137695,
+        "windows": 484
+      }
+    },
+    {
+      "checkpoint_kind": "complete_pass",
+      "elapsed_seconds": 4935.96657878207,
+      "gradient_norm": 1.1330283880233765,
+      "learning_rate": 0.00023867734362531502,
+      "pass": 1,
+      "step": 7201,
+      "target_presentations": 117980449,
+      "train_nll": 5.168654441833496,
+      "validation": {
+        "bits_per_utf8_byte": 1.5324473847606954,
+        "context_length": 2048,
+        "correct_targets": 65517,
+        "next_token_accuracy": 0.26480502473566786,
+        "nll": 4.918082223151463,
+        "perplexity": 136.74012452450023,
+        "protocol_id": "wikitext103-gpt2-causal-t2048-coverage-v1",
+        "scored_bytes": 1145546,
+        "scored_targets": 247416,
+        "scored_targets_per_second": 15874.075030479875,
+        "seconds": 15.586167983012274,
+        "split": "validation",
+        "stride": 512,
+        "total_nll": 1216812.2313232422,
+        "windows": 484
+      }
+    },
+    {
+      "checkpoint_kind": "complete_pass",
+      "elapsed_seconds": 9767.333257099148,
+      "gradient_norm": 1.1338297128677368,
+      "learning_rate": 0.00010066276890251466,
+      "pass": 2,
+      "step": 14402,
+      "target_presentations": 235960898,
+      "train_nll": 4.824193000793457,
+      "validation": {
+        "bits_per_utf8_byte": 1.4458416071555311,
+        "context_length": 2048,
+        "correct_targets": 70372,
+        "next_token_accuracy": 0.2844278462185146,
+        "nll": 4.640138367135368,
+        "perplexity": 103.55867570928768,
+        "protocol_id": "wikitext103-gpt2-causal-t2048-coverage-v1",
+        "scored_bytes": 1145546,
+        "scored_targets": 247416,
+        "scored_targets_per_second": 16579.609826081065,
+        "seconds": 14.922908475855365,
+        "split": "validation",
+        "stride": 512,
+        "total_nll": 1148044.474243164,
+        "windows": 484
+      }
+    },
+    {
+      "checkpoint_kind": "complete_pass",
+      "elapsed_seconds": 14611.675129996147,
+      "gradient_norm": 1.2363629341125488,
+      "learning_rate": 2.9999999999999997e-05,
+      "pass": 3,
+      "step": 21603,
+      "target_presentations": 353941347,
+      "train_nll": 4.601438522338867,
+      "validation": {
+        "bits_per_utf8_byte": 1.4173332098492946,
+        "context_length": 2048,
+        "correct_targets": 72747,
+        "next_token_accuracy": 0.29402706373072074,
+        "nll": 4.548646389403136,
+        "perplexity": 94.50439954078429,
+        "protocol_id": "wikitext103-gpt2-causal-t2048-coverage-v1",
+        "scored_bytes": 1145546,
+        "scored_targets": 247416,
+        "scored_targets_per_second": 15066.086055966513,
+        "seconds": 16.422048771055415,
+        "split": "validation",
+        "stride": 512,
+        "total_nll": 1125407.8950805664,
+        "windows": 484
+      }
+    }
+  ],
+  "model_identity": {
+    "attention_heads": 4,
+    "canonical_sdm_forward_and_kernels": true,
+    "controller": "released_tied_scalar_decay_and_delta_gate",
+    "host_implementation": "released_sparse_delta_memory",
+    "initial_state": "zero",
+    "initial_state_construction": "none",
+    "mechanism": "sparse_delta_memory",
+    "mechanism_diagnostics": false,
+    "memory_heads": 1,
+    "prior_initialization": {
+      "full_table_target_std": 0.08838834764831845,
+      "semantic_role_seed_offset": 8000,
+      "truncation_standard_deviations": 3
+    },
+    "prior_initialization_kind": "none",
+    "product_key_codebook_size": 32,
+    "reads": 16,
+    "slots_per_head": 1024,
+    "topology": "independent_per_recurrent_layer",
+    "value_width_per_memory_head": 128,
+    "width": 128,
+    "writes": 16
+  },
+  "nonprior_initialization_sha256": "5c57ed222c1cf4dcd57e8893377a9a069f11df6e98a5d2e05be7fcc474ed295e",
+  "optimizer": {
+    "beta1": 0.9,
+    "beta2": 0.95,
+    "gradient_clip": 1.0,
+    "name": "AdamW",
+    "schedule": "2.5_percent_linear_warmup_then_cosine_to_0.1_peak",
+    "state_precision": {
+      "all_moments_fp32": true,
+      "master_parameter_dtype": "float32",
+      "moment_dtypes": [
+        "float32"
+      ]
+    },
+    "weight_decay": 0.01
+  },
+  "optimizer_measurement_targets": 353941347,
+  "optimizer_seconds": 14542.827558378223,
+  "optimizer_targets_per_second": 24337.863154823146,
+  "parameter_accounting": {
+    "active_parameters_excluding_learned_initial_state": 14712348,
+    "learned_initial_state_names": [],
+    "learned_initial_state_parameters": 0,
+    "logical_recurrent_state": {
+      "bytes_bf16_per_sequence": 1835008,
+      "bytes_fp32_per_sequence": 3670016,
+      "elements_per_layer_per_sequence": 131072,
+      "elements_per_sequence": 917504,
+      "kind": "sparse_logical_table",
+      "layers": 7,
+      "memory_heads": 1
+    },
+    "total_trainable_parameters": 14712348
+  },
+  "peak_allocated_device_memory_bytes": 1794558976,
+  "precision": {
+    "activations": "bfloat16",
+    "optimizer_state": "float32"
+  },
+  "prior_diagnostics": {
+    "final": {
+      "layers": [
+        {
+          "heads": 1,
+          "mixer_index": 0,
+          "mode": "zero",
+          "slots_per_head": 1024
+        },
+        {
+          "heads": 1,
+          "mixer_index": 1,
+          "mode": "zero",
+          "slots_per_head": 1024
+        },
+        {
+          "heads": 1,
+          "mixer_index": 2,
+          "mode": "zero",
+          "slots_per_head": 1024
+        },
+        {
+          "heads": 1,
+          "mixer_index": 3,
+          "mode": "zero",
+          "slots_per_head": 1024
+        },
+        {
+          "heads": 1,
+          "mixer_index": 4,
+          "mode": "zero",
+          "slots_per_head": 1024
+        },
+        {
+          "heads": 1,
+          "mixer_index": 5,
+          "mode": "zero",
+          "slots_per_head": 1024
+        },
+        {
+          "heads": 1,
+          "mixer_index": 6,
+          "mode": "zero",
+          "slots_per_head": 1024
+        }
+      ],
+      "learned_prior_parameters": 0
+    },
+    "initial": {
+      "layers": [
+        {
+          "heads": 1,
+          "mixer_index": 0,
+          "mode": "zero",
+          "slots_per_head": 1024
+        },
+        {
+          "heads": 1,
+          "mixer_index": 1,
+          "mode": "zero",
+          "slots_per_head": 1024
+        },
+        {
+          "heads": 1,
+          "mixer_index": 2,
+          "mode": "zero",
+          "slots_per_head": 1024
+        },
+        {
+          "heads": 1,
+          "mixer_index": 3,
+          "mode": "zero",
+          "slots_per_head": 1024
+        },
+        {
+          "heads": 1,
+          "mixer_index": 4,
+          "mode": "zero",
+          "slots_per_head": 1024
+        },
+        {
+          "heads": 1,
+          "mixer_index": 5,
+          "mode": "zero",
+          "slots_per_head": 1024
+        },
+        {
+          "heads": 1,
+          "mixer_index": 6,
+          "mode": "zero",
+          "slots_per_head": 1024
+        }
+      ],
+      "learned_prior_parameters": 0
+    },
+    "initial_state": "zero",
+    "schema_version": 1,
+    "validation": {
+      "normal": {
+        "bits_per_utf8_byte": 1.4173332098492946,
+        "context_length": 2048,
+        "correct_targets": 72747,
+        "next_token_accuracy": 0.29402706373072074,
+        "nll": 4.548646389403136,
+        "perplexity": 94.50439954078429,
+        "protocol_id": "wikitext103-gpt2-causal-t2048-coverage-v1",
+        "scored_bytes": 1145546,
+        "scored_targets": 247416,
+        "scored_targets_per_second": 15066.086055966513,
+        "seconds": 16.422048771055415,
+        "split": "validation",
+        "stride": 512,
+        "total_nll": 1125407.8950805664,
+        "windows": 484
+      }
+    },
+    "validation_nll_penalty": {}
+  },
+  "project_model_identity": {
+    "addressing": "product_key",
+    "family": "released_sparse_delta_memory",
+    "host_implementation": "released_layer_unchanged",
+    "initial_memory_comparison": [
+      "zero",
+      "additive_product_key",
+      "full_table"
+    ],
+    "mechanism": "sparse_delta_memory",
+    "mutation": "gated_delta",
+    "read_order": "read_after_write",
+    "topology": "independent_per_layer",
+    "upstream_repository": "https://github.com/facebookresearch/sparse-delta-memory",
+    "upstream_revision": "183e7df809131b80ad4393741029d0f20fc3640b"
+  },
+  "protocol_id": "wikitext103-gpt2-causal-t2048-coverage-v1",
+  "recovery_checkpoint_seconds": 4.887415786972269,
+  "resume": null,
+  "schema": "factorized-sdm-canonical-wikitext103-language-v1",
+  "seed": 0,
+  "status": "decision_bearing_complete",
+  "terminal_test": {
+    "bits_per_utf8_byte": 1.4427583368953865,
+    "context_length": 2048,
+    "correct_targets": 83379,
+    "next_token_accuracy": 0.29418260851156913,
+    "nll": 4.548554325388422,
+    "perplexity": 94.49569948684153,
+    "protocol_id": "wikitext103-gpt2-causal-t2048-coverage-v1",
+    "scored_bytes": 1289122,
+    "scored_targets": 283426,
+    "scored_targets_per_second": 15725.2048412223,
+    "seconds": 18.023676184937358,
+    "split": "test",
+    "stride": 512,
+    "total_nll": 1289178.558227539,
+    "windows": 554
+  },
+  "terminal_validation": {
+    "bits_per_utf8_byte": 1.4173332098492946,
+    "context_length": 2048,
+    "correct_targets": 72747,
+    "next_token_accuracy": 0.29402706373072074,
+    "nll": 4.548646389403136,
+    "perplexity": 94.50439954078429,
+    "protocol_id": "wikitext103-gpt2-causal-t2048-coverage-v1",
+    "scored_bytes": 1145546,
+    "scored_targets": 247416,
+    "scored_targets_per_second": 15066.086055966513,
+    "seconds": 16.422048771055415,
+    "split": "validation",
+    "stride": 512,
+    "total_nll": 1125407.8950805664,
+    "windows": 484
+  },
+  "total_seconds": 14630.175286500016,
+  "validation_by_pass": {
+    "1": {
+      "bits_per_utf8_byte": 1.5324473847606954,
+      "context_length": 2048,
+      "correct_targets": 65517,
+      "next_token_accuracy": 0.26480502473566786,
+      "nll": 4.918082223151463,
+      "perplexity": 136.74012452450023,
+      "protocol_id": "wikitext103-gpt2-causal-t2048-coverage-v1",
+      "scored_bytes": 1145546,
+      "scored_targets": 247416,
+      "scored_targets_per_second": 15874.075030479875,
+      "seconds": 15.586167983012274,
+      "split": "validation",
+      "stride": 512,
+      "total_nll": 1216812.2313232422,
+      "windows": 484
+    },
+    "2": {
+      "bits_per_utf8_byte": 1.4458416071555311,
+      "context_length": 2048,
+      "correct_targets": 70372,
+      "next_token_accuracy": 0.2844278462185146,
+      "nll": 4.640138367135368,
+      "perplexity": 103.55867570928768,
+      "protocol_id": "wikitext103-gpt2-causal-t2048-coverage-v1",
+      "scored_bytes": 1145546,
+      "scored_targets": 247416,
+      "scored_targets_per_second": 16579.609826081065,
+      "seconds": 14.922908475855365,
+      "split": "validation",
+      "stride": 512,
+      "total_nll": 1148044.474243164,
+      "windows": 484
+    },
+    "3": {
+      "bits_per_utf8_byte": 1.4173332098492946,
+      "context_length": 2048,
+      "correct_targets": 72747,
+      "next_token_accuracy": 0.29402706373072074,
+      "nll": 4.548646389403136,
+      "perplexity": 94.50439954078429,
+      "protocol_id": "wikitext103-gpt2-causal-t2048-coverage-v1",
+      "scored_bytes": 1145546,
+      "scored_targets": 247416,
+      "scored_targets_per_second": 15066.086055966513,
+      "seconds": 16.422048771055415,
+      "split": "validation",
+      "stride": 512,
+      "total_nll": 1125407.8950805664,
+      "windows": 484
+    }
+  },
+  "variant_id": "sdm_zero"
+}

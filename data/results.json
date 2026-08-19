@@ -1,0 +1,314 @@
+{
+  "arms": [
+    {
+      "execution": {
+        "accelerator": "NVIDIA RTX A6000",
+        "evaluation_seconds": 81.77810298022814,
+        "optimizer_seconds": 14542.827558378223,
+        "optimizer_targets_per_second": 24337.863154823146,
+        "peak_allocated_device_memory_bytes": 1794558976,
+        "recovery_checkpoint_seconds": 4.887415786972269,
+        "total_seconds": 14630.175286500016
+      },
+      "hashes": {
+        "data_manifest": "fc4ef13cbc38070f2d7774dffbfd5be48cab31fe45d6d9995d522fc3bac1dde6",
+        "data_payload": "f430ce52a43a44b88f5a8ec1ec5882866daaa568595bfbd6b765e3369586f85e",
+        "nonprior_initialization": "5c57ed222c1cf4dcd57e8893377a9a069f11df6e98a5d2e05be7fcc474ed295e"
+      },
+      "initial_state": "zero",
+      "parameters": {
+        "active_excluding_learned_initial_state": 14712348,
+        "input_embedding": 6432896,
+        "learned_initial_state": 0,
+        "logical_recurrent_state": {
+          "bytes_bf16_per_sequence": 1835008,
+          "bytes_fp32_per_sequence": 3670016,
+          "elements_per_layer_per_sequence": 131072,
+          "elements_per_sequence": 917504,
+          "kind": "sparse_logical_table",
+          "layers": 7,
+          "memory_heads": 1
+        },
+        "output_embedding": 6432896,
+        "position_embedding": 262144,
+        "total_trainable": 14712348
+      },
+      "seed": 0,
+      "source_record": "data/recorded-results/zero.json",
+      "source_record_sha256": "b06393a3df3f87a252e8743012f64349f9891f136fb41735ea0a682b68b69bf5",
+      "test": {
+        "bits_per_utf8_byte": 1.4427583368953865,
+        "context_length": 2048,
+        "correct_targets": 83379,
+        "next_token_accuracy": 0.29418260851156913,
+        "nll": 4.548554325388422,
+        "perplexity": 94.49569948684153,
+        "protocol_id": "wikitext103-gpt2-causal-t2048-coverage-v1",
+        "scored_bytes": 1289122,
+        "scored_targets": 283426,
+        "scored_targets_per_second": 15725.2048412223,
+        "seconds": 18.023676184937358,
+        "split": "test",
+        "stride": 512,
+        "total_nll": 1289178.558227539,
+        "windows": 554
+      },
+      "validation": {
+        "bits_per_utf8_byte": 1.4173332098492946,
+        "context_length": 2048,
+        "correct_targets": 72747,
+        "next_token_accuracy": 0.29402706373072074,
+        "nll": 4.548646389403136,
+        "perplexity": 94.50439954078429,
+        "protocol_id": "wikitext103-gpt2-causal-t2048-coverage-v1",
+        "scored_bytes": 1145546,
+        "scored_targets": 247416,
+        "scored_targets_per_second": 15066.086055966513,
+        "seconds": 16.422048771055415,
+        "split": "validation",
+        "stride": 512,
+        "total_nll": 1125407.8950805664,
+        "windows": 484
+      }
+    },
+    {
+      "execution": {
+        "accelerator": "NVIDIA RTX A6000",
+        "evaluation_seconds": 86.50037980079651,
+        "optimizer_seconds": 12417.687822163105,
+        "optimizer_targets_per_second": 28502.999275620783,
+        "peak_allocated_device_memory_bytes": 1795483648,
+        "recovery_checkpoint_seconds": 5.199634172022343,
+        "total_seconds": 12528.382830068469
+      },
+      "hashes": {
+        "data_manifest": "fc4ef13cbc38070f2d7774dffbfd5be48cab31fe45d6d9995d522fc3bac1dde6",
+        "data_payload": "f430ce52a43a44b88f5a8ec1ec5882866daaa568595bfbd6b765e3369586f85e",
+        "nonprior_initialization": "5c57ed222c1cf4dcd57e8893377a9a069f11df6e98a5d2e05be7fcc474ed295e"
+      },
+      "initial_state": "product",
+      "parameters": {
+        "active_excluding_learned_initial_state": 14712348,
+        "input_embedding": 6432896,
+        "learned_initial_state": 57344,
+        "logical_recurrent_state": {
+          "bytes_bf16_per_sequence": 1835008,
+          "bytes_fp32_per_sequence": 3670016,
+          "elements_per_layer_per_sequence": 131072,
+          "elements_per_sequence": 917504,
+          "kind": "sparse_logical_table",
+          "layers": 7,
+          "memory_heads": 1
+        },
+        "output_embedding": 6432896,
+        "position_embedding": 262144,
+        "total_trainable": 14769692
+      },
+      "seed": 0,
+      "source_record": "data/recorded-results/product.json",
+      "source_record_sha256": "acc7a06a6de149a627c805e347c14bd14f226cf135cc06e6a66d1731472b0c15",
+      "test": {
+        "bits_per_utf8_byte": 1.4220502974007894,
+        "context_length": 2048,
+        "correct_targets": 85559,
+        "next_token_accuracy": 0.3018742105523135,
+        "nll": 4.483268518192083,
+        "perplexity": 88.52354113720499,
+        "protocol_id": "wikitext103-gpt2-causal-t2048-coverage-v1",
+        "scored_bytes": 1289122,
+        "scored_targets": 283426,
+        "scored_targets_per_second": 14610.921915085522,
+        "seconds": 19.398228369653225,
+        "split": "test",
+        "stride": 512,
+        "total_nll": 1270674.8630371094,
+        "windows": 554
+      },
+      "validation": {
+        "bits_per_utf8_byte": 1.3958748220952129,
+        "context_length": 2048,
+        "correct_targets": 74346,
+        "next_token_accuracy": 0.3004898632263071,
+        "nll": 4.479780001949762,
+        "perplexity": 88.2152633547841,
+        "protocol_id": "wikitext103-gpt2-causal-t2048-coverage-v1",
+        "scored_bytes": 1145546,
+        "scored_targets": 247416,
+        "scored_targets_per_second": 14359.840494843096,
+        "seconds": 17.22971784323454,
+        "split": "validation",
+        "stride": 512,
+        "total_nll": 1108369.2489624023,
+        "windows": 484
+      }
+    },
+    {
+      "execution": {
+        "accelerator": "NVIDIA RTX A6000",
+        "evaluation_seconds": 82.47624448034912,
+        "optimizer_seconds": 14244.704534980468,
+        "optimizer_targets_per_second": 24847.222778881267,
+        "peak_allocated_device_memory_bytes": 1809242624,
+        "recovery_checkpoint_seconds": 4.579544125124812,
+        "total_seconds": 14365.663504039869
+      },
+      "hashes": {
+        "data_manifest": "fc4ef13cbc38070f2d7774dffbfd5be48cab31fe45d6d9995d522fc3bac1dde6",
+        "data_payload": "f430ce52a43a44b88f5a8ec1ec5882866daaa568595bfbd6b765e3369586f85e",
+        "nonprior_initialization": "5c57ed222c1cf4dcd57e8893377a9a069f11df6e98a5d2e05be7fcc474ed295e"
+      },
+      "initial_state": "full",
+      "parameters": {
+        "active_excluding_learned_initial_state": 14712348,
+        "input_embedding": 6432896,
+        "learned_initial_state": 917504,
+        "logical_recurrent_state": {
+          "bytes_bf16_per_sequence": 1835008,
+          "bytes_fp32_per_sequence": 3670016,
+          "elements_per_layer_per_sequence": 131072,
+          "elements_per_sequence": 917504,
+          "kind": "sparse_logical_table",
+          "layers": 7,
+          "memory_heads": 1
+        },
+        "output_embedding": 6432896,
+        "position_embedding": 262144,
+        "total_trainable": 15629852
+      },
+      "seed": 0,
+      "source_record": "data/recorded-results/full.json",
+      "source_record_sha256": "05967f1f28ad74fcfde595b39a9d2c9c3413de5627b88ea3de2c5f1f7bfbb196",
+      "test": {
+        "bits_per_utf8_byte": 1.4219991921512416,
+        "context_length": 2048,
+        "correct_targets": 85383,
+        "next_token_accuracy": 0.30125323717654695,
+        "nll": 4.4831073997303585,
+        "perplexity": 88.50927950936719,
+        "protocol_id": "wikitext103-gpt2-causal-t2048-coverage-v1",
+        "scored_bytes": 1289122,
+        "scored_targets": 283426,
+        "scored_targets_per_second": 15388.585461666938,
+        "seconds": 18.417937159072608,
+        "split": "test",
+        "stride": 512,
+        "total_nll": 1270629.1978759766,
+        "windows": 554
+      },
+      "validation": {
+        "bits_per_utf8_byte": 1.3952532743226276,
+        "context_length": 2048,
+        "correct_targets": 74371,
+        "next_token_accuracy": 0.30059090762117247,
+        "nll": 4.477785269157244,
+        "perplexity": 88.03947286198859,
+        "protocol_id": "wikitext103-gpt2-causal-t2048-coverage-v1",
+        "scored_bytes": 1145546,
+        "scored_targets": 247416,
+        "scored_targets_per_second": 15266.566248160767,
+        "seconds": 16.206394809298217,
+        "split": "validation",
+        "stride": 512,
+        "total_nll": 1107875.7201538086,
+        "windows": 484
+      }
+    }
+  ],
+  "differences": {
+    "test": {
+      "product_minus_full": 0.00016111846172428557,
+      "product_minus_zero": -0.06528580719633936
+    },
+    "validation": {
+      "product_minus_full": 0.0019947327925180502,
+      "product_minus_zero": -0.06886638745337414
+    }
+  },
+  "execution_summary": {
+    "aggregate_gpu_hours": 11.534506005724543,
+    "aggregate_gpu_seconds": 41524.221620608354,
+    "slowest_arm_hours": 4.063937579583338,
+    "slowest_arm_seconds": 14630.175286500016
+  },
+  "experiment": {
+    "attention_heads": 4,
+    "layout": "BBBBBBBA",
+    "memory_heads": 1,
+    "optimizer_steps_per_arm": 21603,
+    "passes": 3,
+    "product_key_codebook_size": 32,
+    "product_key_factors": 2,
+    "protocol_id": "wikitext103-gpt2-causal-t2048-coverage-v1",
+    "reads": 16,
+    "seed": 0,
+    "slots_per_head": 1024,
+    "target_presentations_per_arm": 353941347,
+    "task": "wikitext103_gpt2_causal_language_modeling",
+    "test_scored_targets_per_arm": 283426,
+    "validation_scored_targets_per_arm": 247416,
+    "value_width": 128,
+    "width": 128,
+    "writes": 16
+  },
+  "interpretation": "single_canonical_seed0_full_coverage_comparison",
+  "record_provenance": {
+    "derived_accounting_fields": [
+      "input_embedding_parameters",
+      "output_embedding_parameters",
+      "position_embedding_parameters"
+    ],
+    "recorded_source_payload_sha256": "3cb3a8f3ce0b3fbbd7a00f06f52571922982d147a3f810249162beb5a39a0f12",
+    "source": "recorded_result_records"
+  },
+  "schema_version": 3,
+  "terminal_nll": {
+    "test": {
+      "full": 4.4831073997303585,
+      "product": 4.483268518192083,
+      "zero": 4.548554325388422
+    },
+    "validation": {
+      "full": 4.477785269157244,
+      "product": 4.479780001949762,
+      "zero": 4.548646389403136
+    }
+  },
+  "validation_trajectory": [
+    {
+      "passes": 0.5,
+      "step": 3601,
+      "validation_nll": {
+        "full": 5.249618796699088,
+        "product": 5.2467695408827675,
+        "zero": 5.294118626579403
+      }
+    },
+    {
+      "passes": 1.0,
+      "step": 7201,
+      "validation_nll": {
+        "full": 4.842625416712413,
+        "product": 4.841983465094238,
+        "zero": 4.918082223151463
+      }
+    },
+    {
+      "passes": 2.0,
+      "step": 14402,
+      "validation_nll": {
+        "full": 4.554488059308552,
+        "product": 4.557797954466941,
+        "zero": 4.640138367135368
+      }
+    },
+    {
+      "passes": 3.0,
+      "step": 21603,
+      "validation_nll": {
+        "full": 4.477785269157244,
+        "product": 4.479780001949762,
+        "zero": 4.548646389403136
+      }
+    }
+  ]
+}
